@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .attendance-confirmation {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(
+                to right,
+                #E31837 0%,
+                #E31837 50%,
+                #ffffff 50%,
+                #ffffff 100%
+            );
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .success-animation {
+            margin: 40px auto;
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+
+        .checkmark {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 4;
+            stroke: #28a745;
+            stroke-miterlimit: 10;
+            box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+            position: relative;
+            top: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+
+        @keyframes stroke {
+            100% { stroke-dashoffset: 0; }
+        }
+
+        @keyframes scale {
+            0%, 100% { transform: none; }
+            50% { transform: scale3d(1.1, 1.1, 1); }
+        }
+
+        @keyframes fill {
+            100% { box-shadow: inset 0 0 0 100px rgba(40, 167, 69, 0.1); }
+        }
+
+        .success-text {
+            margin-top: 20px;
+            color: #28a745;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .action-button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .action-button:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        .done-button {
+            background: #28a745;
+            color: white;
+            padding: 16px 48px;
+            margin-top: 32px;
+        }
+
+        .done-button:hover {
+            background: #218838;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background: linear-gradient(
+                    to bottom,
+                    #E31837 0%,
+                    #E31837 50%,
+                    #ffffff 50%,
+                    #ffffff 100%
+                );
+            }
+
+            .dashboard-container {
+                padding: 24px;
+                margin: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-button {
+                width: 100%;
+            }
+        }

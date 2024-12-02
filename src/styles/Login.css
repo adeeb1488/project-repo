@@ -1,0 +1,188 @@
+/* .container{
+ 
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+            to right,
+            #E31837 0%,
+            black 50%,
+            #ffffff 50%,
+            #ffffff 100%
+        );
+}
+.left-section{
+    background-color: red;
+}
+
+.right-section{
+    background-color: white;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex; /* Create horizontal alignment */
+    flex-direction: row; /* Align sections side-by-side */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    background: #ffffff;
+}
+
+/* Logo Section */
+.logo-section {
+    flex: 1; /* Ensures it takes up half the space */
+    background: #E31837;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Match the parent's height */
+}
+
+.logo-section img {
+    max-width: 80%; /* Scales logo within the available space */
+    height: auto;
+}
+
+/* Form Section */
+.form-section {
+    flex: 1; /* Ensures it takes up half the space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Match the parent's height */
+    background: #ffffff;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Header */
+.form-header {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #666666;
+}
+
+/* Input Fields */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 20px;
+    padding-right: 40px; /* Space for the input icon */
+    background: #f8f9fa;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333333;
+}
+
+.form-input:focus {
+    outline: none;
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(227, 24, 55, 0.2);
+}
+
+.form-input::placeholder {
+    color: #999999;
+}
+
+/* Input Icons */
+.input-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #666666;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: #E31837;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Sign In Button */
+.sign-in-button {
+    width: 100%;
+    padding: 14px;
+    background: #E31837;
+    color: #ffffff;
+    border: none;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sign-in-button:hover {
+    background: #C41430;
+    transform: translateY(-2px);
+}
+
+/* Register Link */
+.register-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.register-link a {
+    color: #E31837;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Stack sections vertically on small screens */
+    }
+
+    .logo-section,
+    .form-section {
+        width: 100%; /* Ensure full width in stacked layout */
+        height: auto;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+}
