@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.updateAfterCourse {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        to right,
+        #E31837 0%,
+        #E31837 50%,
+        #ffffff 50%,
+        #ffffff 100%
+    );
+    padding: 20px;
+    padding-top: 80px;
+}
+
+/* Navigation Styles */
+.nav-container {
+    background: #efebeb;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-logo span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #E31837;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-link:hover {
+    color: #E31837;
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-profile:hover {
+    border-color: #E31837;
+    background: rgba(227, 24, 55, 0.05);
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.student-name {
+    font-size: 1.8rem;
+    color: #E31837;
+    margin-bottom: 24px;
+    padding: 12px 24px;
+    background: #f8f9fa;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.percentage {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #28a745;
+    transition: color 0.3s ease;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.attendance-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.attendance-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.date-cell {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.attendance-select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eaeaea;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #333;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.attendance-select:focus {
+    outline: none;
+    border-color: #E31837;
+}
+
+.attendance-select option[value="present"] {
+    color: #28a745;
+}
+
+.attendance-select option[value="absent"] {
+    color: #dc3545;
+}
+
+.attendance-select option[value="excuse"] {
+    color: #ffc107;
+}
+
+.attendance-select.present {
+    border-color: #28a745;
+    background-color: #f8fff9;
+}
+
+.attendance-select.absent {
+    border-color: #dc3545;
+    background-color: #fff5f5;
+}
+
+.attendance-select.excuse {
+    border-color: #ffc107;
+    background-color: #fffbeb;
+}
+
+.button-container {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.action-button {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.review-button {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.save-button {
+    background: #E31837;
+    color: white;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+}
+
+.review-button:hover {
+    background: #e9ecef;
+}
+
+.save-button:hover {
+    background: #C41230;
+    box-shadow: 0 4px 12px rgba(227, 24, 55, 0.2);
+}
+
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(
+            to bottom,
+            #E31837 0%,
+            #E31837 50%,
+            #ffffff 50%,
+            #ffffff 100%
+        );
+    }
+
+    .dashboard-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .percentage {
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-profile span {
+        display: none;
+    }
+}

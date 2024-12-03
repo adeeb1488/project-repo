@@ -10,7 +10,7 @@ const Dashboard = () => {
         
     };
     const handleButtonClick1 = (text) => {
-        navigate('/manage-attendance');
+        navigate('/updateCourseBefore');
     };
 
     const handleHelpClick = () => {

@@ -8,7 +8,8 @@ import AttendanceSuccess from './components/AttendanceConfirmation';
 import AttendanceRecord from './components/ViewCourseAttendance';
 import ViewAttendance from './components/ViewAttendance';
 import FacultyRegistration from './components/Register';
-
+import UpdateCourseBefore from './components/UpdateCourseBefore';
+import UpdateCourseAfter from './components/UpdateCourseAfter';
 const App = () => (
     <Router>
         <Routes>
@@ -21,6 +22,9 @@ const App = () => (
             <Route path="/attendance" element={<ViewAttendance />} />
             <Route path="/manage-attendance" element={ <AttendanceRecord />} />
             <Route path="/register" element={ <FacultyRegistration />} />
+            <Route path="/updateCourseBefore" element={ <UpdateCourseBefore />} />
+            <Route path="/updateCourseAfter" element={ <UpdateCourseAfter />} />
+
         </Routes>
     </Router>
 );
