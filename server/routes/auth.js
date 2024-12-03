@@ -7,24 +7,43 @@ dotenv.config();
 
 const router = express.Router();
 
-router.post('/register', async(req,res) =>{
-    const {username, email, password, firstName, lastName} = req.body;
+router.post('/register', async (req, res) => {
+    const { email, password, firstName, lastName } = req.body;
 
-    try{
-        const existingUser = await User.findOne({email});
-        if(existingUser) return res.status(400).json({message:'User already exists'});
+    console.log('Incoming request body:', req.body);
+
+    try {
+        const existingUser = await User.findOne({ email });
+        console.log('Existing user check result:', existingUser);
+
+        if (existingUser) {
+            return res.status(400).json({ message: 'User already exists' });
+        }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({firstName, lastName, username, email, password:hashedPassword});
+        console.log('Password hashed successfully');
+
+        const newUser = new User({
+            firstName,
+            lastName,
+            email,
+            password: hashedPassword,
+        });
 
         await newUser.save();
-        res.status(201).json({message:"User registered successfully!"});
+        console.log('New user saved:', newUser);
 
-    }
-    catch(err){
-        res.status(500).json({message:'Server error'});
+        res.status(201).json({ message: 'User registered successfully!' });
+    } catch (err) {
+        console.error('Error in registration:', err);
+        if (err.code === 11000) {
+            return res.status(400).json({ message: 'Email already registered' });
+        }
+        res.status(500).json({ message: 'Server error' });
     }
 });
+
+
 
 router.post('/login', async(req, res)=> {
     const{email, password} = req.body;

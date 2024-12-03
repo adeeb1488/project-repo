@@ -7,7 +7,10 @@ const Dashboard = () => {
     const navigate = useNavigate();
     // Event handlers for buttons
     const handleButtonClick = (text) => {
-        console.log('Clicked:', text);
+        
+    };
+    const handleButtonClick1 = (text) => {
+        navigate('/manage-attendance');
     };
 
     const handleHelpClick = () => {
@@ -29,22 +32,22 @@ const Dashboard = () => {
                         <span>LU Smart</span>
                     </div>
                     <div className="nav-links">
-                        <a href="#" className="nav-link">
+                        <a href="/dashboard" className="nav-link">
                             <i className="ri-home-4-line"></i>
                             Dashboard
                         </a>
-                        <a href="#" className="nav-link">
+                        <a href="/attendance" className="nav-link">
                             <i className="ri-calendar-line"></i>
                             Review Attendance
                         </a>
-                        <a href="#" className="nav-link">
+                        <a href="/manage-attendance" className="nav-link">
                             <i className="ri-group-line"></i>
                             Manage Attendance
                         </a>
-                        <a href="#" className="nav-link">
+                        {/* <a href="#" className="nav-link">
                             <i className="ri-settings-3-line"></i>
                             Settings
-                        </a>
+                        </a> */}
                     </div>
                     <div className="nav-profile">
                         <i className="ri-user-3-line"></i>
@@ -87,7 +90,7 @@ const Dashboard = () => {
 
                     <button
                         className="dashboard-button"
-                        onClick={() => handleButtonClick('Manage Attendance')}
+                        onClick={() => handleButtonClick1('Manage Attendance')}
                     >
                         <span className="button-text">Manage Attendance</span>
                         <i className="ri-settings-3-line button-icon"></i>

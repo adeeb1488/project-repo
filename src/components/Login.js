@@ -67,7 +67,7 @@ const Login = () => {
                             Sign In to LU Smart
                         </button>
                         <p className="register-link">
-                            New faculty member? <a href="#">Register Here</a>
+                            New faculty member? <a href="/register">Register Here</a>
                         </p>
                     </form>
                 </div>

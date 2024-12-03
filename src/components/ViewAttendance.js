@@ -24,6 +24,7 @@ const ViewAttendance = () => {
 
     return (
         <div className="attendance-record">
+        <div className="dashboard4-container">
             {/* Navigation Bar */}
             <nav className="nav-container">
                 <div className="nav-content">
@@ -112,6 +113,7 @@ const ViewAttendance = () => {
                 <i className="ri-check-line"></i>
                 Done
             </button>
+            </div>
         </div>
     );
 };

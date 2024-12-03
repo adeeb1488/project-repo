@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/ViewCourseAttendance.css'; // Ensure the CSS file is linked properly
-import { useMatch, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 const AttendanceRecord = () => {
     const [selectedSubject, setSelectedSubject] = useState(null);
 const navigate = useNavigate()
